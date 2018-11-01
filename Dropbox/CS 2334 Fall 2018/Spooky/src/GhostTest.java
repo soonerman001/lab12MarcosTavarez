@@ -1,11 +1,11 @@
-
+import java.util.Comparator;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.TreeSet;
 
 public class GhostTest
 {
-    class Point
+   class Point
     {
         private Integer x;
         private Integer y;
@@ -38,6 +38,7 @@ public class GhostTest
 
     public static void main(String[] args)
     {
+       
         ArrayList<String> keys = new ArrayList<>();
         keys.add("ghost");
         keys.add("alien");
@@ -53,7 +54,7 @@ public class GhostTest
         };
         
         // How to fix this error?
-        //
+        // FIXED
         ArrayList<Integer> scaryKeys = new ArrayList<Integer>(Arrays.asList(values));
         
         keys.forEach(k -> System.out.println(k));
@@ -61,8 +62,8 @@ public class GhostTest
         keys.removeIf(k -> k.equalsIgnoreCase("alien"));
         
         GhostTest gt = new GhostTest();
-        Point p1 = gt.new Point(1,1);
-        Point p2 = gt.new Point(new Integer(1), new Integer(1));
+        GhostTest.Point p1 = gt.new Point(1,1);
+        GhostTest.Point p2 = gt.new Point(new Integer(1), new Integer(1));
         
         if (p1.equals(p2))
             System.out.println("wow");
@@ -71,13 +72,16 @@ public class GhostTest
             System.out.println("aha");
         }
         TreeSet<GhostTest.Point> tp = new TreeSet<GhostTest.Point>();
+        
 
-        ArrayList<GhostTest.Point> points = new ArrayList<>();
+        ArrayList<GhostTest.Point> points = new ArrayList<GhostTest.Point>();
+        
         for (int index = 0; index < 5; ++index)
         {
+            
             points.add(p1);
             // How to fix this?
-            tp.add(p1);
+           tp.add(p1);
         }
         
         points.forEach(p -> System.out.println(p.getX()));
