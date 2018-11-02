@@ -1,11 +1,11 @@
-import java.util.Comparator;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.TreeSet;
 
-public class GhostTest
+public class GhostTest 
 {
-   class Point
+   class Point implements Comparable<Point>
     {
         private Integer x;
         private Integer y;
@@ -29,6 +29,13 @@ public class GhostTest
         public boolean equals(Point p)
         {
             return x.equals(p.getX()) && p.getY().equals(y);
+        }
+
+        @Override
+        public int compareTo(Point arg0)
+        {
+            // TODO Auto-generated method stub
+            return 0;
         }
     }
 
@@ -87,7 +94,7 @@ public class GhostTest
         points.forEach(p -> System.out.println(p.getX()));
                
         // How to fix this?
-        // tp.addAll(points);
+         tp.addAll(points);
         tp.forEach(p -> System.out.println(p.getX()));
 
         
